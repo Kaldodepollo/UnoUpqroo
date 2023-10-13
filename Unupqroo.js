@@ -51,9 +51,22 @@ for(var cTCards = 0; cTCards < totalCards; cTCards++){
         if (!cardsPlayers["player_"+cPlayers]) {
             cardsPlayers["player_"+cPlayers] = [];
         }
-        cardsPlayers["player_"+cPlayers].push(deck[cTCards]);
+        cardsPlayers["player_"+cPlayers].push(deck.shift());
         
     }
 }
 
-console.log(cardsPlayers);
+var trash = [];
+
+trash.push(deck.shift())
+
+console.log(trash); 
+
+function cardValidation(card) {
+    console.log(card.number)
+    if (card.number == 2 ){
+        console.log("es igual")
+    } else {console.log("no es igual")}
+}
+
+cardValidation({colors: "verde",number:2,type:"comun"});
